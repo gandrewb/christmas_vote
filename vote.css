@@ -18,20 +18,36 @@ body{
 	font-weight: 200;
 	color: #fff;
 }
+header{
+	text-align: center;
+}
+	.logo{
+		width: 100%;
+		max-width: 600px;
+	}
+	.instructions{
+		font-size: 1.8rem;
+		margin: -90px auto 4em;
+		padding: 0 1em;
+		max-width: 20em;
+	}
 
 .poll{
 	font-size: 1.8rem;
 	position: relative;
-	margin: 0 auto;
-	max-width: 40em;
-	padding: 1em;
+	margin: 0 auto 5em;
+	max-width: 43em;
+	padding: 0;
 }
-
 	.movie_vote{
-		position: relative;
-		border-top: solid 1px #fff;
+		position: absolute;
+		left: 1em;
+		right: 3.5em;
+		border-top: solid 1px #f55;
 		font-size: 1.3em;
 		cursor: pointer;
+		-webkit-transition: all .3s ease-out;
+			    transition: all .3s ease-out;
 	}
 	.movie_vote:hover::after{
 		background-color: rgba(0,0,0,0.4);
@@ -47,10 +63,11 @@ body{
 		width: 1.5em;
 		height: 1.5em;
 		text-align: center;
-		line-height: 1.5em;
+		line-height: 1.45em;
 	}
 	.movie_vote.selected::after{
 		content: "–";
+		border-radius: 100%;
 	}
 		.bar{
 			position: absolute;
@@ -64,13 +81,15 @@ body{
 			height: 100%;
 			top: 0;
 			left: 0;
-			width: 50%;
+			width: 0%;
 			background-color: #fff;
+			-webkit-transition: all .3s ease-out;
+			        transition: all .3s ease-out;
 		}
 		.title{
 			position: relative;
 			font-size: 1em;
-			margin: 5px 0 1em;
+			margin: 5px 2.5em 1em 0;
 			top: .5em;
 			left: 2.5em;
 		}
@@ -80,3 +99,28 @@ body{
 			top: 5px;
 			font-size: 1.6em;
 		}
+		
+@media screen and (max-width: 768px){
+	.poll{
+		font-size: 1.6rem;
+	}
+}
+@media screen and (max-width: 600px){
+	.instructions{
+		margin: -35vw auto 3em;
+	}
+}
+@media screen and (max-width: 450px){
+	.poll{
+		font-size: 1.2rem;
+	}
+}
+
+@media screen and (max-device-width: 415px){
+	.instructions,
+	.movie_vote,
+	.title,
+	.votes{
+		font-weight: 400;
+	}
+}
