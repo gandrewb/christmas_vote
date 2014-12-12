@@ -1,0 +1,127 @@
+<html>
+<head>
+	<title>You're Invited</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+
+	<style>
+		body{
+			background-color:hsl(355, 100%, 40%); margin:0; text-align:center;
+		}
+		.title_img{
+			width: 100%; 
+			max-width: 1000px;
+			position: relative;
+			z-index: -1;
+		}
+		.text_block{
+			margin: -35vw 0 15vh;
+			color: #fff;
+			font-family: 'Myriad Set Pro','Myriad Pro',Myriad,'Helvetica Neue';
+			font-weight: 200;
+			font-size: 18px;
+		}
+		.intro{
+			font-size: 1.35em;
+			margin: 0 auto;
+			max-width: 20em;
+			padding: 0 1em;
+		}
+		.schedule{
+			color: #fff;
+			font-weight: 200;
+			font-size: 18px;
+			margin: 1.5em auto;
+			border-top: solid 1px rgb(255,100,100);
+			border-bottom: solid 1px rgb(255,100,100);
+			text-align: left;
+			width: 27em;
+			overflow: auto;
+		}
+		.cell{
+			padding: .75em 0;
+			width: 49.5%;
+			float: left;
+			margin: 0;
+			list-style: none;
+		}
+		.schedule p{
+			margin: 0;
+		}
+		.header{
+			font-weight: 400;
+		}
+		.serving{
+			margin: 0 auto;
+			max-width: 28em;
+			padding: 0 1em;
+		}
+		.address{
+			font-size: .75em;
+			margin: 1em auto;
+		}
+		a, .header{
+			color: #fff;
+			text-decoration: none;
+		}
+		a{
+			border-bottom: solid 1px rgb(255,100,100);
+		}
+		@media screen and (max-width: 550px){
+			.text_block{
+				margin-top: -15vw;
+			}
+		}
+		@media screen and (max-width: 500px){			
+			.schedule{
+				width: 100%;
+			}
+			.cell{
+				width: 100%;
+				padding: .75em 1.5em;
+			}
+			.cell:first-of-type{
+				padding-bottom: 0;
+			}
+			.no_small{
+				display: none;
+			}
+		}
+		@media screen and (min-width: 1000px){
+			.text_block{
+				margin-top: -350px;
+			}
+		}
+		@media screen and (max-device-width: 500px){
+			.intro,
+			.cell,
+			.serving,
+			.address{
+				font-weight: 400;
+			}
+			.header{
+				font-weight: 600;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<img src="title_img.svg" class="title_img">
+	<div class="text_block">
+		<p class="intro">I'm hosting a little Christmas party for my esteemed Apple co-workers. And you're invited!</p>
+		<div class="schedule">
+			<ul class="cell">
+				<li class="header">6:30pm</li>
+				<li>Sugar Cookie Art</li>
+				<li><span class="no_small">Holiday </span>Haiku Contest</li>
+			</ul>
+			<ul class="cell">
+				<li class="header">8:00pm</li>
+				<li>Christmas Movie (<a href="vote.html">vote here</a>)</li>
+			</ul>
+		</div>
+		<p class="serving">Serving light sandwiches, homemade Wassail, and English Toffee made from the Griffin family recipe. Feel free to bring a significant other and a favorite Christmas dessert to share.</p>
+		<p class="address"><a href="http://maps.apple.com/?q=954+Mouton+Circle+Palo+Alto+CA+94303">954 Mouton Circle, Palo Alto, CA</a></p>
+	</div>
+</body>
+</html>
