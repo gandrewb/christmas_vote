@@ -13,16 +13,16 @@ dom = {
 	poll: document.getElementById('poll')
 };
 
-//document.cookie = "myVotes=; expires=Thu, 25 Dec 2013 23:59:59 UTC";
-
 poll = {
 	expires: 'expires=Thu, 25 Dec 2014 23:59:59 UTC',
 	len: null,
 	movies: null,
+	votes: null,
 	
 	build: function(mov){
 		this.movies = mov;
 		this.len = this.movies.length;
+		this.votes = this.get_votes();
 		
 		this.loop(function(mov, idx){
 			dom.poll.appendChild(poll.make_div(mov, idx));
@@ -88,21 +88,20 @@ poll = {
 	vote: function(div){
 		var idx = div.getAttribute('data-idx');
 		var mov = this.movies[idx];
-		var votes = this.get_votes();
 		
 		if(!this.voted_for(mov.id)){
 			div.classList.add('selected');
 			mov.increment('votes');
-			votes.push(mov.id);
+			this.votes.push(mov.id);
 		}else{
 			div.classList.remove('selected');
 			mov.increment('votes', -1);
-			var i = votes.indexOf(mov.id);
-			votes.splice(i, 1);
+			var i = this.votes.indexOf(mov.id);
+			this.votes.splice(i, 1);
 		}
 		
 		mov.save();
-		document.cookie = "myVotes="+ votes.join(',') +"; "+ this.expires;
+		document.cookie = "myVotes="+ this.votes.join(',') +"; "+ this.expires;
 		div.querySelector('.votes').innerHTML = mov.attributes.votes;
 		this.order();
 	},
